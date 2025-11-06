@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import { useTranslation } from 'react-i18next';
 import HomeSection from './pages/HomeSection';
 import Noticeboard from './pages/Noticeboard';
+import Introduction from './pages/Introduction';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <HomeSection />
       <Noticeboard />                             
+      <Introduction />
     </div>
   );
 }

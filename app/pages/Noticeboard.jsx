@@ -3,26 +3,24 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
-
 export default function Noticeboard() {
   const [notices, setNotices] = useState([]);
   const [index, setIndex] = useState(0);
 
   // 🔹 API থেকে ডেটা ফেচ করা
- useEffect(() => {
-  async function fetchNotices() {
-    try {
-      const res = await fetch("/.netlify/functions/proxy");
-      const data = await res.json();
-      setNotices(data);
-    } catch (err) {
-      console.error("Error fetching notices:", err);
+  useEffect(() => {
+    async function fetchNotices() {
+      try {
+        const res = await fetch("https://jamiatussunnah.onrender.com/post/api/");
+
+        const data = await res.json();
+        setNotices(data);
+      } catch (err) {
+        console.error("Error fetching notices:", err);
+      }
     }
-  }
-  fetchNotices();
-}, []);
-
-
+    fetchNotices();
+  }, []);
 
   // 🔹 Auto Slide Effect
   useEffect(() => {
@@ -83,22 +81,17 @@ export default function Noticeboard() {
               className="card col-span-1 w-full h-auto bg-white/10 backdrop-blur-md text-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500"
             >
               {/* 🔹 Image */}
-              {/* <div
-                className="card-image bg-cover bg-center h-56"
-                style={{
-                  backgroundImage: `url(${item.iamge || '/images/default.jpg'})`,
-                }}
-              ></div> */}
+
 
               {/* 🔹 Text Section */}
               <h3 className='text-gray-400 text-left px-3 py-2 '>{item.get_time_difference}</h3>
               <div className="card-text">
-                <h2 className="text-xl font-semibold text-white rounded-sm rounded-tl-4xl rounded-br-4xl mb-1 bg-pink-500 py-2 line-clamp-1">{item.title}</h2>
+                <h2 className="text-xl font-semibold text-white rounded-tl-4xl rounded-br-4xl rounded-sm mb-1 bg-pink-500 py-2 line-clamp-1">{item.title}</h2>
 
                 <p className="text-gray-200 mt-7 text-sm leading-relaxed line-clamp-5">
                   {item.content} 
                 </p>
-                <span className='mt-8 inline-block px-3 rounded-sm rounded-bl-4xl rounded-tr-3xl py-2 bg-blue-500 hover:bg-blue-700 transition-all duration-300'><a className='text-white  font-bold' href="#">Show More</a></span>
+                <span className='mt-8 inline-block px-3 rounded-tl-4xl rounded-br-4xl rounded-sm  py-2 bg-blue-500 hover:bg-blue-700 transition-all duration-300'><a className='text-white  font-bold' href="#">Show More</a></span>
               </div>
 
               {/* 🔹 Stats Section */}
