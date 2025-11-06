@@ -3,24 +3,24 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
+
 export default function Noticeboard() {
   const [notices, setNotices] = useState([]);
   const [index, setIndex] = useState(0);
 
   // 🔹 API থেকে ডেটা ফেচ করা
-  useEffect(() => {
-    async function fetchNotices() {
-      try {
-         const res = await fetch("/.netlify/function/proxy");
-         const data = await res.json();
-        setNotices(data);
-      } catch (err) {
-        console.error("Error fetching notices:", err);
-      }
+ useEffect(() => {
+  async function fetchNotices() {
+    try {
+      const res = await fetch("/.netlify/functions/proxy");
+      const data = await res.json();
+      setNotices(data);
+    } catch (err) {
+      console.error("Error fetching notices:", err);
     }
-    fetchNotices();
-  }, []);
-
+  }
+  fetchNotices();
+}, []);
 
 
 
