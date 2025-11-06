@@ -11,8 +11,8 @@ export default function Noticeboard() {
   useEffect(() => {
     async function fetchNotices() {
       try {
-        const res = await fetch("https://jamiatussunnah.onrender.com/post/api");
-        const data = await res.json();
+         const res = await fetch("/.netlify/function/proxy");
+         const data = await res.json();
         setNotices(data);
       } catch (err) {
         console.error("Error fetching notices:", err);
@@ -20,6 +20,9 @@ export default function Noticeboard() {
     }
     fetchNotices();
   }, []);
+
+
+
 
   // 🔹 Auto Slide Effect
   useEffect(() => {
