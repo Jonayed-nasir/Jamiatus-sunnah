@@ -1,0 +1,47 @@
+{
+    "home": "Home",
+    "about": "About",
+    "about_history": "History",
+    "about_mission": "Mission & Vision",
+    "about_board": "Management Board",
+    "about_teachers": "Teachers",
+
+    "departments": "Departments",
+    "dept_hifz": "Hifz",
+    "dept_hadith": "Dawra-e-Hadith",
+    "dept_ifta": "Ifta",
+    "dept_nurani": "Nurani",
+    "dept_maktab": "Maktab",
+
+    "academic": "Academic",
+    "academic_routine": "Routine",
+    "academic_curriculum": "Curriculum",
+    "academic_results": "Results",
+    "academic_exam": "Examinations",
+
+    "admission": "Admission",
+    "admission_guide": "Admission Guide",
+    "admission_form": "Online Form",
+    "admission_eligibility": "Eligibility",
+
+    "notice": "Notice",
+    "notice_notice": "Notices",
+    "notice_event": "Events",
+    "notice_media": "Media Coverage",
+
+    "gallery": "Gallery",
+    "gallery_photos": "Photos",
+    "gallery_videos": "Videos",
+    "gallery_mehfil": "Mehfil Archive",
+
+    "donate": "Donate",
+    "donate_bkash": "bKash / Nagad",
+    "donate_bank": "Bank Account",
+    "donate_fund": "Fundraising",
+
+    "contact": "Contact",
+    "contact_address": "Address",
+    "contact_map": "Location Map",
+    "contact_form": "Contact Form"
+  
+}

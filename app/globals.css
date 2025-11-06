@@ -1,26 +1,111 @@
 @import "tailwindcss";
+/* nav bar link style */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.navHovereffect {
+  font-size: 1rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+
+.navHovereffect::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(to right, rgb(234, 0, 255), rgba(234, 0, 255, 0.3));
+  right: 0;
+  bottom: -5px;
+  transition: 0.3s;
+  ;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.navHovereffect:hover::after {
+  width: 100%;
+  left: 0;
+  display: inline-block;
+  border-radius: 20%;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Typewriter__cursor bg color */
+
+.Typewriter__cursor {
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa);
+
+}
+
+/* Noticeboard box */
+
+.box {
+  border: 1px solid gray;
+  box-shadow: 1px 1px 2px 3px;
+}
+
+.bor::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 2.5px;
+  background: linear-gradient(to right, rgb(234, 0, 255), rgba(234, 0, 255, 0.3));
+  bottom: -10px;
+  transition: 0.3s;
+  ;
+}
+
+/* NoticeBoard Card style */
+.card {
+  display: grid;
+  /* grid-template-rows: 0px 350px 80px; */
+  grid-template-areas: "image" "text" "stats";
+  font-family: roboto;
+  border-radius: 18px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.card-image {
+  grid-area: image;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-text {
+  grid-area: text;
+  margin: 25px;
+}
+
+.card-text .date {
+  color: rgb(255, 7, 110);
+  font-size: 13px;
+}
+
+.card-text p {
+  color: gray;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.card-text h2 {
+  margin-top: 0px;
+  font-size: 24px;
+}
+
+.card-stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: rgb(255, 7, 110);
+  color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 10px;
 }

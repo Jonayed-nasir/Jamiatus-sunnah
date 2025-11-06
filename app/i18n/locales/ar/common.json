@@ -1,0 +1,48 @@
+{
+    "home": "الرئيسية",
+    "about": "معلومات",
+    "about_history": "التاريخ",
+    "about_mission": "الرسالة والرؤية",
+    "about_board": "مجلس الإدارة",
+    "about_teachers": "المدرسون",
+
+    "departments": "الأقسام",
+    "dept_hifz": "تحفيظ القرآن",
+    "dept_hadith": "دورة الحديث",
+    "dept_ifta": "الإفتاء",
+    "dept_nurani": "نوراني",
+    "dept_maktab": "المكتب",
+
+    "academic": "الأكاديمية",
+    "academic_routine": "الجدول",
+    "academic_curriculum": "المنهج",
+    "academic_results": "النتائج",
+    "academic_exam": "الامتحانات",
+
+    "admission": "القبول",
+    "admission_guide": "دليل القبول",
+    "admission_form": "نموذج عبر الإنترنت",
+    "admission_eligibility": "شروط القبول",
+
+    "notice": "الإعلانات",
+    "notice_notice": "الإعلانات",
+    "notice_event": "الفعاليات",
+    "notice_media": "التغطية الإعلامية",
+
+    "gallery": "المعرض",
+    "gallery_photos": "الصور",
+    "gallery_videos": "الفيديوهات",
+    "gallery_mehfil": "أرشيف المحافل",
+
+    "donate": "تبرع",
+    "donate_bkash": "بيكاش / نجاد",
+    "donate_bank": "الحساب البنكي",
+    "donate_fund": "جمع التبرعات",
+
+    "contact": "الاتصال",
+    "contact_address": "العنوان",
+    "contact_map": "خريطة الموقع",
+    "contact_form": "نموذج الاتصال"
+    
+  
+}

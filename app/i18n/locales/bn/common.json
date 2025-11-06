@@ -1,0 +1,47 @@
+{
+    "home": "হোম",
+    "about": "পরিচিতি",
+    "about_history": "ইতিহাস",
+    "about_mission": "লক্ষ্য ও উদ্দেশ্য",
+    "about_board": "পরিচালনা পর্ষদ",
+    "about_teachers": "শিক্ষকমণ্ডলী",
+
+    "departments": "বিভাগসমূহ",
+    "dept_hifz": "হিফজ",
+    "dept_hadith": "দাওরায়ে হাদীস",
+    "dept_ifta": "ইফতা",
+    "dept_nurani": "নূরানী",
+    "dept_maktab": "মক্তব",
+
+    "academic": "একাডেমিক",
+    "academic_routine": "রুটিন",
+    "academic_curriculum": "পাঠ্যসূচি",
+    "academic_results": "ফলাফল",
+    "academic_exam": "ইমতিহান",
+
+    "admission": "ভর্তি",
+    "admission_guide": "ভর্তি নির্দেশিকা",
+    "admission_form": "অনলাইন ফর্ম",
+    "admission_eligibility": "যোগ্যতা",
+
+    "notice": "নোটিশ",
+    "notice_notice": "নোটিশ",
+    "notice_event": "ইভেন্ট",
+    "notice_media": "মিডিয়া কভারেজ",
+
+    "gallery": "গ্যালারি",
+    "gallery_photos": "ছবি",
+    "gallery_videos": "ভিডিও",
+    "gallery_mehfil": "মেহফিল আর্কাইভ",
+
+    "donate": "দান",
+    "donate_bkash": "বিকাশ / নগদ",
+    "donate_bank": "ব্যাংক একাউন্ট",
+    "donate_fund": "ফান্ডরেইজিং",
+
+    "contact": "যোগাযোগ",
+    "contact_address": "ঠিকানা",
+    "contact_map": "লোকেশন ম্যাপ",
+    "contact_form": "যোগাযোগ ফর্ম"
+  
+}
