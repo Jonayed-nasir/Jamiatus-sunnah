@@ -11,7 +11,7 @@ export default function Noticeboard() {
   useEffect(() => {
     async function fetchNotices() {
       try {
-        const res = await fetch("https://jamiatussunnah.onrender.com/post/api/");
+        const res = await fetch("https://jamiatussunnah.onrender.com/post/api");
         const data = await res.json();
         setNotices(data);
       } catch (err) {
