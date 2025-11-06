@@ -19,8 +19,8 @@ export default function HomeSection() {
         />
       </div>
 
-      <div className="relative w-full h-screen flex space-y-5 flex-col  justify-center items-center">
-        <h1 className="text-white font-bold text-4xl lg:text-6xl">
+      <div className="relative w-full h-screen flex space-y-5 flex-col px-3 justify-center items-center">
+        <h1 className="text-white font-bold text-4xl lg:text-6xl text-center">
           <Typewriter
             options={{
               strings: ['jamiatus sunnah', 'جامعة السنة', 'জামিয়াতুস সুন্নাহ'],
@@ -32,7 +32,7 @@ export default function HomeSection() {
           />
         </h1>
 
-        <h3 className='text-gray-300 text-lg'>
+        <h3 className='text-gray-300 text-lg text-center'>
           <Typewriter
             options={{
               strings: [

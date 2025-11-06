@@ -91,7 +91,7 @@ export default function Noticeboard() {
                 <p className="text-gray-200 mt-7 text-sm leading-relaxed line-clamp-5">
                   {item.content} 
                 </p>
-                <span className='mt-8 inline-block px-3 rounded-tl-4xl rounded-br-4xl rounded-sm  py-2 bg-blue-500 hover:bg-blue-700 transition-all duration-300'><a className='text-white  font-bold' href="#">Show More</a></span>
+                <span className='mt-8 inline-block px-3 rounded-tl-4xl rounded-br-3xl rounded-sm  py-2 bg-blue-500 hover:bg-blue-700 transition-all duration-300'><a className='text-white  font-bold' href="#">Show More</a></span>
               </div>
 
               {/* 🔹 Stats Section */}
