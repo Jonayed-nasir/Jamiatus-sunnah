@@ -1,20 +1,21 @@
 'use client';
 
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-
+import { motion, AnimatePresence } from 'framer-motion';
+import { useSwipeable } from 'react-swipeable';
 export default function Noticeboard() {
   const [notices, setNotices] = useState([]);
   const [index, setIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // 🔹 API থেকে ডেটা ফেচ করা
+  // 🔹 API থেকে ডেটা ফেচ
   useEffect(() => {
     async function fetchNotices() {
       try {
         const res = await fetch("https://jamiatussunnah.onrender.com/post/api/");
-
         const data = await res.json();
-        setNotices(data);
+        setNotices(data.slice(-5).reverse()); // শেষ ৫টা
       } catch (err) {
         console.error("Error fetching notices:", err);
       }
@@ -22,14 +23,24 @@ export default function Noticeboard() {
     fetchNotices();
   }, []);
 
-  // 🔹 Auto Slide Effect
+  // 🔹 Auto slide + progress
   useEffect(() => {
-    if (notices.length === 0) return;
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % notices.length);
+    if (!notices.length) return;
+    setProgress(0);
+
+    const progressInterval = setInterval(() => {
+      if (!isPaused) setProgress(prev => (prev >= 100 ? 0 : prev + 2.5));
+    }, 100);
+
+    const slideInterval = setInterval(() => {
+      if (!isPaused) setIndex(prev => (prev + 1) % notices.length);
     }, 4000);
-    return () => clearInterval(interval);
-  }, [notices]);
+
+    return () => {
+      clearInterval(slideInterval);
+      clearInterval(progressInterval);
+    };
+  }, [notices, isPaused]);
 
   if (!notices.length) {
     return <p className="text-center text-gray-400 py-10">Loading notices...</p>;
@@ -49,61 +60,82 @@ export default function Noticeboard() {
 
   const visibleCards = getVisibleCards();
 
-
-
-
+  const handlePrev = () => setIndex(prev => (prev - 1 + notices.length) % notices.length);
+  const handleNext = () => setIndex(prev => (prev + 1) % notices.length);
 
   return (
-    <div className="  w-full max-w-[90%] lg:max-w-[80%] mx-auto flex  flex-col justify-center items-center ">
-    
-    <div className='flex items-center'>
-      <Image className='w-40' src="/images/new-update.jpeg" alt='new update' width={500} height={500} />
-      <h3 className='text-pink-400 font-bold text-2xl md:text-3xl'>সর্বশেষ নোটিশসমূহ</h3>
-    </div>
+    <div className="w-full max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center py-10 md:py-20">
+      <h3 className='text-pink-400 font-bold text-2xl md:text-3xl mb-6'>সর্বশেষ নোটিশসমূহ</h3>
 
+      {/* 🔹 Navigation Buttons */}
+      <div className="flex justify-between w-full mb-4">
+        <button onClick={handlePrev} className="bg-pink-500 hover:bg-pink-700 text-white px-4 py-2 rounded">Prev</button>
+        <button onClick={handleNext} className="bg-pink-500 hover:bg-pink-700 text-white px-4 py-2 rounded">Next</button>
+      </div>
 
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <AnimatePresence mode="wait">
+          {visibleCards.map((item, idx) => {
+            const dateObj = new Date(item.created_at);
+            const formattedDate = dateObj.toLocaleDateString('bn-GB', {
+              day: '2-digit',
+              month: 'long',
+              year: 'numeric',
+            });
+            const year = dateObj.getFullYear();
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 transition-all duration-700 ease-in-out">
-        {visibleCards.map((item, idx) => {
-          const dateObj = new Date(item.created_at);
-          const formattedDate = dateObj.toLocaleDateString('bn-GB', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric',
-          }); // 👉 “04 Nov 2025”
+            return (
+              <motion.div
+                key={idx + item.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="card col-span-1 w-full h-auto bg-white/10 backdrop-blur-md text-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500"
+              >
+                <div className="card-text p-5">
+                  <h2 className="text-xl font-semibold text-white mb-2 bg-pink-500 py-2 px-3 rounded-tl-2xl rounded-br-2xl line-clamp-1">
+                    {item.title}
+                  </h2>
+                  <p className="text-gray-200 mt-4 text-sm leading-relaxed line-clamp-5">{item.content}</p>
+                  <span className='mt-6 inline-block px-3 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-tl-2xl rounded-br-2xl transition-all duration-300'>
+                    <a href="#">Show More</a>
+                  </span>
+                </div>
 
-          const month = dateObj.toLocaleString('en-US', { month: 'long' });
-          const year = dateObj.getFullYear();
+                <div className="card-stats flex items-center justify-between py-3 px-5 text-sm text-gray-300 h-[50px]">
+                  <div>{formattedDate}</div>
+                  <div className='border-r border-l border-pink-300 px-2'>{item.get_time_difference}</div>
+                  <div>{year}</div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </div>
 
-          return (
-            <div
-              key={idx}
-              className="card col-span-1 w-full h-auto bg-white/10 backdrop-blur-md text-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500"
-            >
-              {/* 🔹 Image */}
+      {/* 🔹 Progress Bar */}
+      <div className="w-full h-1 bg-gray-700 mt-6 rounded overflow-hidden">
+        <div
+          className="h-full bg-pink-500 transition-all duration-100 ease-linear"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
 
-
-              {/* 🔹 Text Section */}
-              <h3 className='text-gray-400 text-left px-3 py-2 '>{item.get_time_difference}</h3>
-              <div className="card-text">
-                <h2 className="text-xl font-semibold text-white rounded-tl-4xl rounded-br-4xl rounded-sm mb-1 bg-pink-500 py-2 line-clamp-1">{item.title}</h2>
-
-                <p className="text-gray-200 mt-7 text-sm leading-relaxed line-clamp-5">
-                  {item.content} 
-                </p>
-                <span className='mt-8 inline-block px-3 rounded-tl-4xl border-b-5 border-blue-800 hover:border-blue-400 rounded-br-3xl rounded-sm  py-2 bg-blue-500 hover:bg-blue-700 transition-all duration-300'><a className='text-white  font-bold' href="#">Show More</a></span>
-              </div>
-
-              {/* 🔹 Stats Section */}
-              <div className="card-stats flex items-center justify-between py-3 px-5 text-sm text-gray-300 h-[50px]">
-                <div>{formattedDate}</div>
-                <div className=' border-r border-l border-pink-300'>{month}</div>
-                <div>{year}</div>
-              </div>
-            </div>
-          );
-        })}
+      {/* 🔹 Dots Indicator */}
+      <div className="flex mt-4 gap-2">
+        {notices.map((_, idx) => (
+          <span
+            key={idx}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === index ? 'bg-pink-500' : 'bg-gray-500'}`}
+          ></span>
+        ))}
       </div>
     </div>
   );
 }
+

@@ -37,16 +37,13 @@ export default function Navbar() {
               } justify-end`}
             >
               <span className="navHovereffect relative inline-block">
-                <a
-                  className="hover:text-gray-600 lg:text-gray-300 bg-white/40 lg:bg-white/0  transition-all duration-300  backdrop-blur-3xl py-1.5 px-1.5 rounded-sm"
-                  href="#"
-                >
+                <a className="hover:text-gray-600 lg:text-gray-300 bg-white/40 lg:bg-white/0  transition-all duration-300  backdrop-blur-3xl py-1.5 px-1.5 rounded-sm" 
+                href="#">
                   {t('home')}
                 </a>
               </span>
               <span className="navHovereffect relative inline-block">
-                <a
-                  className="hover:text-gray-600 lg:text-gray-300 bg-white/40 lg:bg-white/0  transition-all duration-300  backdrop-blur-3xl py-1.5 px-1.5 rounded-sm"
+                <a className="hover:text-gray-600 lg:text-gray-300 bg-white/40 lg:bg-white/0  transition-all duration-300  backdrop-blur-3xl py-1.5 px-1.5 rounded-sm"
                   href="#"
                 >
                   {t('about')}
@@ -61,8 +58,7 @@ export default function Navbar() {
                 </a>
               </span>
               <span className="navHovereffect relative inline-block">
-                <a
-                  className="hover:text-gray-600 lg:text-gray-300 bg-white/40 lg:bg-white/0  transition-all duration-300  backdrop-blur-3xl py-1.5 px-1.5 rounded-sm"
+                <a className="hover:text-gray-600 lg:text-gray-300 bg-white/40 lg:bg-white/0  transition-all duration-300  backdrop-blur-3xl py-1.5 px-1.5 rounded-sm"
                   href="#"
                 >
                   {t('academic')}
