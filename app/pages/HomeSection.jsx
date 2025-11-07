@@ -19,8 +19,12 @@ export default function HomeSection() {
         />
       </div>
 
-      <div className="relative w-full h-screen flex flex-col px-3 justify-center items-center">
-        <div className='space-y-5 bg-transparent backdrop-blur-sm py-2 px-3 rounded-2xl'>
+      <div
+        data-aos="fade-down-right"
+        data-aos-duration="3000"
+        className="relative w-full h-screen flex flex-col px-3 justify-center items-center"
+      >
+        <div className="space-y-5 bg-transparent backdrop-blur-sm py-2 px-3 rounded-2xl">
           <h1 className="text-white font-bold text-4xl lg:text-6xl text-center">
             <Typewriter
               options={{
