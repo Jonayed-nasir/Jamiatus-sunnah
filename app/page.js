@@ -10,7 +10,7 @@ export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Navbar />
       <HomeSection />
       <Noticeboard />                             

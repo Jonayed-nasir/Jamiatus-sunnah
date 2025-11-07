@@ -73,13 +73,17 @@ export default function Noticeboard() {
     <div className="w-full max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center py-10 md:py-20">
       <div className="flex items-center justify-between lg:justify-center">
         <Image
+          data-aos="fade-right"
           className="max-w-32"
           src="/images/new-update.jpeg"
           alt="new-update"
           width={500}
           height={500}
         />
-        <h3 className="font-bold text-center text-lg md:text-3xl bg-blue-500 hover:bg-pink-700 text-white px-4 py-2 rounded border-b-8 border-blue-800 transition-all duration-300">
+        <h3
+          data-aos="fade-left"
+          className="font-bold text-center text-lg md:text-3xl bg-blue-500 hover:bg-pink-700 text-white px-4 py-2 rounded border-b-8 border-blue-800 transition-all duration-300"
+        >
           সর্বশেষ নোটিশসমূহ
         </h3>
       </div>
@@ -124,7 +128,11 @@ export default function Noticeboard() {
                 transition={{ duration: 0.5 }}
                 className="card col-span-1 w-full h-auto bg-white/10 backdrop-blur-md text-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500"
               >
-                <div className="card-text p-5">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  className="card-text p-5"
+                >
                   <h2 className=" space-y-7 text-xl font-semibold text-white mb-2 bg-pink-500 py-1.5 px-3 rounded-tl-2xl rounded-br-2xl leading-10 line-clamp-1 border-b-4 border-pink-700 text-center">
                     {item.title}
                   </h2>
