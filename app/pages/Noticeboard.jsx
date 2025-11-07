@@ -71,7 +71,7 @@ export default function Noticeboard() {
 
   return (
     <div className="w-full max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center py-10 md:py-20">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-between lg:justify-center">
         <Image
           className="max-w-32"
           src="/images/new-update.jpeg"
@@ -79,7 +79,7 @@ export default function Noticeboard() {
           width={500}
           height={500}
         />
-        <h3 className="font-bold text-2xl md:text-3xl bg-blue-500 hover:bg-pink-700 text-white px-4 py-2 rounded border-b-8 border-blue-800 transition-all duration-300">
+        <h3 className="font-bold text-center text-lg md:text-3xl bg-blue-500 hover:bg-pink-700 text-white px-4 py-2 rounded border-b-8 border-blue-800 transition-all duration-300">
           সর্বশেষ নোটিশসমূহ
         </h3>
       </div>
@@ -125,7 +125,7 @@ export default function Noticeboard() {
                 className="card col-span-1 w-full h-auto bg-white/10 backdrop-blur-md text-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500"
               >
                 <div className="card-text p-5">
-                  <h2 className=" space-y-7 text-xl font-semibold text-white mb-2 bg-pink-500 py-1.5 px-3 rounded-tl-2xl rounded-br-2xl line-clamp-1 border-b-4 border-pink-700">
+                  <h2 className=" space-y-7 text-xl font-semibold text-white mb-2 bg-pink-500 py-1.5 px-3 rounded-tl-2xl rounded-br-2xl leading-10 line-clamp-1 border-b-4 border-pink-700 text-center">
                     {item.title}
                   </h2>
                   <p className="text-gray-200 mt-4 text-sm leading-relaxed line-clamp-6">
