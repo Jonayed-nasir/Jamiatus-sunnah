@@ -10,7 +10,7 @@ export default function HomeSection() {
   return (
     <div className=" w-full h-screen z-40">
       <div>
-        <Image
+        <Image 
           className="w-full h-[99vh] bg-cover object-cover absolute"
           src="/images/hero.jpeg"
           alt="hero"
