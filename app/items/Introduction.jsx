@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function Introduction() {
@@ -30,9 +31,9 @@ export default function Introduction() {
           “জামিয়াতুস সুন্নাহ “|
         </p>
         <span className="mt-8 block max-w-[150px] text-center mx-auto  px-3 rounded-tl-4xl border-b-5 border-blue-800 hover:border-blue-400 rounded-br-3xl rounded-sm  py-2 bg-blue-500 hover:bg-blue-700 transition-all duration-300">
-          <a className="text-white  font-bold" href="#">
+          <Link className="text-white  font-bold" href="/about/about">
             Show More
-          </a>
+          </Link>
         </span>
       </div>
     </div>
