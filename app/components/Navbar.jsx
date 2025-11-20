@@ -73,9 +73,9 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <a className="hover:text-gray-300 bg-white/40 lg:bg-transparent backdrop-blur-3xl py-1.5 px-2 rounded-sm" href="#">
+              <Link className="hover:text-gray-300 bg-white/40 lg:bg-transparent backdrop-blur-3xl py-1.5 px-2 rounded-sm" href="#">
                 {t("admission")}
-              </a>
+              </Link>
 
               <a className="hover:text-gray-300 bg-white/40 lg:bg-transparent backdrop-blur-3xl py-1.5 px-2 rounded-sm" href="#">
                 {t("notice")}
