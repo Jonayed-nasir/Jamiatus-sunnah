@@ -194,7 +194,7 @@ export default function Navbar() {
     onMouseEnter={() => setServicesOpen(true)}
     onMouseLeave={() => setServicesOpen(false)}
   >
-    <Link href="/services/free-food-numbers" className="block px-4 py-2 hover:bg-white/10">
+    <Link href="/serviceses/free-food-numbers" className="block px-4 py-2 hover:bg-white/10">
       Free Food
     </Link>
 
@@ -221,7 +221,7 @@ export default function Navbar() {
 
 {/* Admission Dropdown */}
 <div
-  className="relative group"
+  className="relative group z-40"
   onMouseEnter={() => setAdmissionOpen(true)}
   onMouseLeave={() => setAdmissionOpen(false)}
 >
@@ -235,7 +235,7 @@ export default function Navbar() {
   {/* Admission submenu */}
   {admissionOpen && (
     <div
-      className="absolute left-0 top-7 mt-1 w-44 bg-black/80 text-white rounded-xl shadow-xl backdrop-blur-xl transition-all duration-300 p-2"
+      className="absolute left-28 top-6 w-44 bg-black/80 text-white rounded-xl shadow-xl backdrop-blur-xl transition-all duration-300 p-2"
       onMouseEnter={() => setAdmissionOpen(true)}
       onMouseLeave={() => setAdmissionOpen(false)}
     >

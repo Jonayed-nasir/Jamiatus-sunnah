@@ -5,6 +5,7 @@ import HomeSection from './items/HomeSection';
 import Noticeboard from './items/Noticeboard';
 import Introduction from './items/Introduction';
 
+
 export default function Home() {
   const { t } = useTranslation();
 
@@ -14,6 +15,7 @@ export default function Home() {
       <HomeSection />
       <Noticeboard />                             
       <Introduction />
+      
     </div>
   );
 }
