@@ -42,6 +42,38 @@
     "contact": "যোগাযোগ",
     "contact_address": "ঠিকানা",
     "contact_map": "লোকেশন ম্যাপ",
-    "contact_form": "যোগাযোগ ফর্ম"
+    "contact_form": "যোগাযোগ ফর্ম",
+
+
+    "name": "নাম",
+    "birth_date": "জন্ম তারিখ",
+    "birth_or_nid_card_no": "জন্ম/এনআইডি নম্বর",
+    "father_name": "পিতার নাম",
+    "occupation": "পিতার পেশা",
+    "mather_name": "মাতার নাম",
+    "father_or_mather_nid_no": "পিতা/মাতার এনআইডি নম্বর",
+    "phone_number": "ফোন নম্বর",
+    "permanent_address": "স্থায়ী ঠিকানা",
+    "permanent_address_village": "স্থায়ী ঠিকানা (গ্রাম)",
+    "permanent_address_post_office": "স্থায়ী ঠিকানা (ডাকঘর)",
+    "permanent_address_Upazila": "স্থায়ী ঠিকানা (উপজেলা)",
+    "permanent_address_district": "স্থায়ী ঠিকানা (জেলা)",
+    "current_address": "বর্তমান ঠিকানা",
+    "current_address_village": "বর্তমান ঠিকানা (গ্রাম)",
+    "current_address_post_office": "বর্তমান ঠিকানা (ডাকঘর)",
+    "current_address_Upazila": "বর্তমান ঠিকানা (উপজেলা)",
+    "current_address_district": "বর্তমান ঠিকানা (জেলা)",
+    "guardian_info": "অভিভাবক তথ্য",
+    "guardian_name": "অভিভাবকের নাম",
+    "guardian_phone_number": "অভিভাবকের ফোন নম্বর",
+    "guardian_address": "অভিভাবকের ঠিকানা",
+    "education": "শিক্ষা",
+    "Previous_class": "পূর্ববর্তী শ্রেণি",
+    "Where_read": "যে স্কুলে পড়েছে",
+    "current_class": "বর্তমান শ্রেণি",
+    "login": "লগইন"
+
+
+
   
 }

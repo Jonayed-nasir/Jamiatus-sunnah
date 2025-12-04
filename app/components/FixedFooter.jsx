@@ -12,6 +12,7 @@ import {
   MessageCircle,
   BookOpen
 } from "lucide-react";
+import Link from "next/link";
 
 export default function FixedFooter() {
   const [small, setSmall] = useState(false);
@@ -52,7 +53,9 @@ export default function FixedFooter() {
         className="backdrop-blur-xl bg-[#0b3a2d]/90 text-white flex items-center justify-around shadow-xl overflow-x-auto"
       >
         <NavItem icon={<Home size={22} />} label="Home" href="/" />
+        <Link href='/admission'>
         <NavItem icon={<FileEdit size={22} />} label="Register" href="/register" />
+        </Link>
         <NavItem icon={<Bell size={22} />} label="Notice" href="/notice" />
         <NavItem icon={<Users size={22} />} label="Student" href="/student" />
         <NavItem icon={<BookUser size={22} />} label="Teacher" href="/teacher" />

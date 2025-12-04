@@ -42,7 +42,39 @@
     "contact": "الاتصال",
     "contact_address": "العنوان",
     "contact_map": "خريطة الموقع",
-    "contact_form": "نموذج الاتصال"
+    "contact_form": "نموذج الاتصال",
     
-  
+
+
+
+    "name": "الاسم",
+    "birth_date": "تاريخ الميلاد",
+    "birth_or_nid_card_no": "رقم الميلاد/الهوية",
+    "father_name": "اسم الأب",
+    "occupation": "مهنة الأب",
+    "mather_name": "اسم الأم",
+    "father_or_mather_nid_no": "رقم هوية الأب/الأم",
+    "phone_number": "رقم الهاتف",
+    "permanent_address": "العنوان الدائم",
+    "permanent_address_village": "القرية",
+    "permanent_address_post_office": "مكتب البريد",
+    "permanent_address_Upazila": "المنطقة",
+    "permanent_address_district": "المحافظة",
+    "current_address": "العنوان الحالي",
+    "current_address_village": "القرية الحالية",
+    "current_address_post_office": "مكتب البريد الحالي",
+    "current_address_Upazila": "المنطقة الحالية",
+    "current_address_district": "المحافظة الحالية",
+    "guardian_info": "معلومات الوصي",
+    "guardian_name": "اسم الوصي",
+    "guardian_phone_number": "رقم هاتف الوصي",
+    "guardian_address": "عنوان الوصي",
+    "education": "تعليم",
+    "Previous_class": "الصف السابق",
+    "Where_read": "أين قرأ",
+    "current_class": "الصف الحالي",
+    "login": "تسجيل الدخول"
+
+
+    
 }

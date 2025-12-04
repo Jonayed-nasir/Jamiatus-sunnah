@@ -42,6 +42,38 @@
     "contact": "Contact",
     "contact_address": "Address",
     "contact_map": "Location Map",
-    "contact_form": "Contact Form"
+    "contact_form": "Contact Form",
+
+    
+    "name": "Name",
+    "birth_date": "Birth Date",
+    "birth_or_nid_card_no": "Birth/NID Number",
+    "father_name": "Father Name",
+    "occupation": "Father Occupation",
+    "mather_name": "Mother Name",
+    "father_or_mather_nid_no": "Father/Mother NID Number",
+    "phone_number": "Phone Number",
+    "permanent_address": "Permanent Address",
+    "permanent_address_village": "Permanent Address Village",
+    "permanent_address_post_office": "Permanent Address Post Office",
+    "permanent_address_Upazila": "Permanent Address Upazila",
+    "permanent_address_district": "Permanent Address District",
+    "current_address": "Current Address",
+    "current_address_village": "Current Address Village",
+    "current_address_post_office": "Current Address Post Office",
+    "current_address_Upazila": "Current Address Upazila",
+    "current_address_district": "Current Address District",
+    "guardian_info": "Guardian Information",
+    "guardian_name": "Guardian Name",
+    "guardian_phone_number": "Guardian Phone Number",
+    "guardian_address": "Guardian Address",
+    "education": "Education",
+    "Previous_class": "Previous Class",
+    "Where_read": "Where Read",
+    "current_class": "Current Class",
+    "login": "Login"
+
+
+
   
 }
