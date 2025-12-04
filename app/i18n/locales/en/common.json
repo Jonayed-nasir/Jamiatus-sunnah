@@ -71,9 +71,15 @@
     "Previous_class": "Previous Class",
     "Where_read": "Where Read",
     "current_class": "Current Class",
-    "login": "Login"
+    "login": "Login",
 
-
+    "register": "Register",
+    "student": "Student",
+    "teacher": "Teacher",
+    "events": "Events",
+    "prayer_times": "Prayer Times",
+    "message": "Message",
+    "fatwa": "Fatwa"
 
   
 }

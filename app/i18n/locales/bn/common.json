@@ -71,9 +71,15 @@
     "Previous_class": "পূর্ববর্তী শ্রেণি",
     "Where_read": "যে স্কুলে পড়েছে",
     "current_class": "বর্তমান শ্রেণি",
-    "login": "লগইন"
+    "login": "লগইন",
 
-
+    "register": "ভর্তি",
+    "student": "শিক্ষার্থী",
+    "teacher": "শিক্ষক",
+    "events": "ইভেন্ট",
+    "prayer_times": "নামাজ সময়",
+    "message": "বার্তা",
+    "fatwa": "ফতোয়া"
 
   
 }

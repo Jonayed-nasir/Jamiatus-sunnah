@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="bg-[#0b3a2d] text-white py-12 mt-16 mb-14">
+    <footer className="bg-[#CCFFCC] text-black py-12 mt-16 mb-14">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 
         {/* Madrasa Info */}

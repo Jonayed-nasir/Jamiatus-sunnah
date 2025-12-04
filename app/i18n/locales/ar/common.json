@@ -73,8 +73,14 @@
     "Previous_class": "الصف السابق",
     "Where_read": "أين قرأ",
     "current_class": "الصف الحالي",
-    "login": "تسجيل الدخول"
+    "login": "تسجيل الدخول",
 
 
-    
+    "register": "التسجيل",
+    "student": "الطلاب",
+    "teacher": "المعلمون",
+    "events": "الفعاليات",
+    "prayer_times": "أوقات الصلاة",
+    "message": "الرسائل",
+    "fatwa": "الفتاوى"
 }
