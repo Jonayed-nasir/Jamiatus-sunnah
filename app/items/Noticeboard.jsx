@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSwipeable } from 'react-swipeable';
 import Image from 'next/image';
+import Link from 'next/link';
 export default function Noticeboard() {
   const [notices, setNotices] = useState([]);
   const [index, setIndex] = useState(0);
@@ -140,7 +141,7 @@ export default function Noticeboard() {
                     {item.content}
                   </p>
                   <span className="mt-6 inline-block px-3 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-tl-2xl rounded-br-2xl transition-all duration-300 border-b-4 border-blue-800 hover:border-blue-400">
-                    <a href="#">Show More</a>
+                    <Link href={`/notice/${item.id}`}>বিস্তারিত পড়ুন</Link>
                   </span>
                 </div>
 

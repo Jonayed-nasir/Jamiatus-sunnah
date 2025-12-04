@@ -9,7 +9,7 @@ import FixedFooter from './components/FixedFooter';
 const aref_ruqaa = Aref_Ruqaa({subsets: ['latin'], weight: ['400', '700'],})
 
 export const metadata = {
-  title: 'Multilingual Website',
+  title: 'jamiatussunnah',
   description: 'Next.js multilingual setup',
 };
 
