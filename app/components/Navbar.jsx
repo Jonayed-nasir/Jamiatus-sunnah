@@ -350,13 +350,13 @@ export default function Navbar() {
                       Admission Numbers
                     </Link>
                     <Link
-                      href="/admission/apply-online"
+                      href="/admission"
                       className="block px-4 py-2 hover:bg-white/10"
                     >
                       Apply Online
                     </Link>
                     <Link
-                      href="/admission/fees"
+                      href="/notfoundpage"
                       className="block px-4 py-2 hover:bg-white/10"
                     >
                       Admission Notice
@@ -370,21 +370,21 @@ export default function Navbar() {
 
               <a
                 className="hover:text-gray-300 bg-white/40 lg:bg-transparent backdrop-blur-3xl py-1.5 px-2 rounded-sm"
-                href="#"
+                href="/notfoundpage"
               >
                 {t('notice')}
               </a>
 
               <a
                 className="hover:text-gray-300 bg-white/40 lg:bg-transparent backdrop-blur-3xl py-1.5 px-2 rounded-sm"
-                href="#"
+                href="/notfoundpage"
               >
                 {t('donate')}
               </a>
 
               <a
                 className="hover:text-gray-300 bg-white/40 lg:bg-transparent backdrop-blur-3xl py-1.5 px-2 rounded-sm"
-                href="#"
+                href="/notfoundpage"
               >
                 {t('contact')}
               </a>
