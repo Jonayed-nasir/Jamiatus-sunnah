@@ -1,86 +1,109 @@
 {
-    "home": "الرئيسية",
-    "about": "معلومات",
-    "about_history": "التاريخ",
-    "about_mission": "الرسالة والرؤية",
-    "about_board": "مجلس الإدارة",
-    "about_teachers": "المدرسون",
+  "home": "الرئيسية",
+  "about": "حول",
+  "about_history": "التاريخ",
+  "about_mission": "الهدف والرسالة",
+  "about_board": "مجلس الإدارة",
+  "about_teachers": "المعلمون",
+  "departments": "الأقسام",
+  "dept_hifz": "حفظ",
+  "dept_hadith": "دورة الحديث",
+  "dept_ifta": "الإفتاء",
+  "dept_nurani": "النوراني",
+  "dept_maktab": "المكتب",
+  "academic": "أكاديمي",
+  "academic_routine": "الروتين",
+  "academic_curriculum": "المنهج",
+  "academic_results": "النتائج",
+  "academic_exam": "الامتحانات",
+  "admission": "القبول",
+  "admission_guide": "دليل القبول",
+  "admission_form": "نموذج أونلاين",
+  "admission_eligibility": "الأهلية",
+  "notice": "الإعلانات",
+  "notice_notice": "إعلان",
+  "notice_event": "حدث",
+  "notice_media": "تغطية إعلامية",
+  "gallery": "المعرض",
+  "gallery_photos": "صور",
+  "gallery_videos": "فيديو",
+  "gallery_mehfil": "أرشيف المحفل",
+  "donate": "تبرع",
+  "donate_bkash": "بكاش / نقدي",
+  "donate_bank": "حساب بنكي",
+  "donate_fund": "جمع التبرعات",
+  "contact": "اتصال",
+  "contact_address": "العنوان",
+  "contact_map": "خريطة الموقع",
+  "contact_form": "نموذج الاتصال",
+  "show_more": "مزيد",
+  "hero": {
+    "title": "جامعۃ السنة",
+    "location": "داخين كاندي، بهادوربور، شيبسر، ماداريبور",
+    "subtitle": "ملتزمة بالتعليم الديني والعمل الصالح وبناء الشخصية"
+  },
+  "new_update": {
+    "title": "أحدث الإعلانات",
+    "navigation": ["السابق", "التالي"]
+  },
+  "about_section": {
+    "title": "مقدمة موجزة",
+    "short_intro": "فقط الإسلام. على مر العصور حاولت مجموعة من الناس قمع المبادئ الحقيقية للإسلام بالرغبات الدنيوية والجشع. في الوقت نفسه، ضحّت مجموعة أخرى، بإرشاد من الله، بمكتسباتهم الدنيوية لإقامة دين الله على الأرض.",
+    "at_a_glance": {
+    "founded": "١٩٩٠",
+    "students": "٤٠٠٠",
+    "teachers": "١٢٥",
+    "staff": "٦٠"
+  }
+  },
+  "higher_departments": [
+  { "name": "قسم الإفتاء", "session": "١٤٣٥-٣٦ هـ / ٢٠١٤-١٥ م" },
+  { "name": "قسم علوم الحديث", "session": "١٤٤٥-٤٦ هـ / ٢٠٢٤-٢٥ م" },
+  { "name": "قسم الأدب العربي", "session": "١٤٣٦-٣٧ هـ / ٢٠١٥-١٦ م" },
+  { "name": "قسم القراءات العليا", "session": "١٤٤٥-٤٦ هـ / ٢٠٢٤-٢٥ م" }
+],
 
-    "departments": "الأقسام",
-    "dept_hifz": "تحفيظ القرآن",
-    "dept_hadith": "دورة الحديث",
-    "dept_ifta": "الإفتاء",
-    "dept_nurani": "نوراني",
-    "dept_maktab": "المكتب",
-
-    "academic": "الأكاديمية",
-    "academic_routine": "الجدول",
-    "academic_curriculum": "المنهج",
-    "academic_results": "النتائج",
-    "academic_exam": "الامتحانات",
-
-    "admission": "القبول",
-    "admission_guide": "دليل القبول",
-    "admission_form": "نموذج عبر الإنترنت",
-    "admission_eligibility": "شروط القبول",
-
-    "notice": "الإعلانات",
-    "notice_notice": "الإعلانات",
-    "notice_event": "الفعاليات",
-    "notice_media": "التغطية الإعلامية",
-
-    "gallery": "المعرض",
-    "gallery_photos": "الصور",
-    "gallery_videos": "الفيديوهات",
-    "gallery_mehfil": "أرشيف المحافل",
-
-    "donate": "تبرع",
-    "donate_bkash": "بيكاش / نجاد",
-    "donate_bank": "الحساب البنكي",
-    "donate_fund": "جمع التبرعات",
-
-    "contact": "الاتصال",
-    "contact_address": "العنوان",
-    "contact_map": "خريطة الموقع",
-    "contact_form": "نموذج الاتصال",
-    
-
-
-
-    "name": "الاسم",
-    "birth_date": "تاريخ الميلاد",
-    "birth_or_nid_card_no": "رقم الميلاد/الهوية",
-    "father_name": "اسم الأب",
-    "occupation": "مهنة الأب",
-    "mather_name": "اسم الأم",
-    "father_or_mather_nid_no": "رقم هوية الأب/الأم",
-    "phone_number": "رقم الهاتف",
-    "permanent_address": "العنوان الدائم",
-    "permanent_address_village": "القرية",
-    "permanent_address_post_office": "مكتب البريد",
-    "permanent_address_Upazila": "المنطقة",
-    "permanent_address_district": "المحافظة",
-    "current_address": "العنوان الحالي",
-    "current_address_village": "القرية الحالية",
-    "current_address_post_office": "مكتب البريد الحالي",
-    "current_address_Upazila": "المنطقة الحالية",
-    "current_address_district": "المحافظة الحالية",
-    "guardian_info": "معلومات الوصي",
-    "guardian_name": "اسم الوصي",
-    "guardian_phone_number": "رقم هاتف الوصي",
-    "guardian_address": "عنوان الوصي",
-    "education": "تعليم",
-    "Previous_class": "الصف السابق",
-    "Where_read": "أين قرأ",
-    "current_class": "الصف الحالي",
-    "login": "تسجيل الدخول",
-
-
-    "register": "التسجيل",
-    "student": "الطلاب",
-    "teacher": "المعلمون",
-    "events": "الفعاليات",
-    "prayer_times": "أوقات الصلاة",
-    "message": "الرسائل",
-    "fatwa": "الفتاوى"
+  "education_projects": [
+    "قسم المكتب",
+    "قسم الحفظ",
+    "قسم الكتاب",
+    "قسم الإفتاء",
+    "قسم علوم الحديث",
+    "قسم الأدب العربي",
+    "قسم القراءات العليا"
+  ],
+  "training_projects": [
+    "مكتبة الطلاب",
+    "مسابقة خطابة",
+    "مجلة الحائط والمناظرات",
+    "التدريب العملي على الأعمال"
+  ],
+  "social_service_projects": [
+    "مكتب الصباح",
+    "قسم الفتوى",
+    "قسم الفرائض",
+    "قسم النشر",
+    "مجلس الدعوة الحق",
+    "الدعوة والتبليغ",
+    "تعليم القرآن للكبار",
+    "قسم النحو والأدب العربي",
+    "تدريب نوراني المعلم"
+  ],
+  "befakul_results": [
+  { "year": "٢٠٢٤", "students": "٥١٥" },
+  { "year": "٢٠٢٣", "students": "٤١٦" },
+  { "year": "٢٠٢٢", "students": "٣٦٩" },
+  { "year": "٢٠٢١", "students": "٣١٥" },
+  { "year": "٢٠١٩", "students": "٢٨٠" },
+  { "year": "٢٠١٨", "students": "١٥٧" },
+  { "year": "٢٠١٧", "students": "٢٣٥" },
+  { "year": "٢٠١٦", "students": "١٥٣" },
+  { "year": "٢٠١٥", "students": "١٦٢" },
+  { "year": "٢٠١٤", "students": "١١١" },
+  { "year": "٢٠١٣", "students": "٨١" },
+  { "year": "٢٠١٢", "students": "٧٢" },
+  { "year": "٢٠١١", "students": "٥٦" }
+]
 }
+
+

@@ -4,12 +4,15 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 export default function Noticeboard() {
   const [notices, setNotices] = useState([]);
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     async function fetchNotices() {
@@ -80,7 +83,7 @@ export default function Noticeboard() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            সর্বশেষ নোটিশসমূহ
+            {t('new_update.title')}
           </motion.h2>
         </div>
 
@@ -91,14 +94,15 @@ export default function Noticeboard() {
             whileHover={{ scale: 1.1 }}
             className="bg-pink-500 hover:bg-pink-600 text-white px-5 py-2 rounded-lg shadow-lg border-b-4 border-pink-700"
           >
-            Prev
+            {t('new_update.navigation.0')}
           </motion.button>
           <motion.button
             onClick={() => setIndex((prev) => (prev + 1) % notices.length)}
             whileHover={{ scale: 1.1 }}
             className="bg-pink-500 hover:bg-pink-600 text-white px-5 py-2 rounded-lg shadow-lg border-b-4 border-pink-700"
           >
-            Next
+                        {t('new_update.navigation.1')}
+
           </motion.button>
         </div>
 
@@ -134,7 +138,7 @@ export default function Noticeboard() {
                   <p className="text-gray-700 line-clamp-5 mb-4">{item.content}</p>
                   <Link href={`/notice/${item.id}`} className="justify-center flex">
                     <span className="inline-block px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg border-b-4 border-blue-700 transition-all duration-300 mt-5 mb-5">
-                      বিস্তারিত পড়ুন
+                      {t('show_more')}
                     </span>
                   </Link>
 

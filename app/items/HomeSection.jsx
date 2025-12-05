@@ -1,30 +1,48 @@
+"use client";
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
-// import { useTranslation } from 'react-i18next';
-// import LanguageSwitcher from './LanguageSwitcher';
 
 export default function HomeSection() {
-  // const {} = useTranslation();
+  const images = [
+    "/images/hero.jpeg",
+    "/images/hero2.jpeg",
+    "/images/hero3.jpeg",
+    "/images/hero4.jpeg"
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto change every 5 sec
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === images.length - 1 ? 0 : prev + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className=" w-full h-screen z-40">
-      <div>
-        <Image 
-          className="w-full h-[99vh] bg-cover object-cover absolute"
-          src="/images/hero.jpeg"
-          alt="hero"
-          width={500}
-          height={500}
-        />
-      </div>
+    <div className="w-full h-screen z-40 relative">
+
+      {/* Background Image */}
+      <Image
+        key={currentIndex}
+        className="w-full h-[50%] lg:h-auto  absolute transition-all duration-1000"
+        src={images[currentIndex]}
+        alt="hero"
+        width={500}
+        height={500}
+      />
 
       <div
         data-aos="fade-down-right"
         data-aos-duration="3000"
-        className="relative w-full h-screen flex flex-col px-3 justify-center items-center"
+        className="relative w-full h-screen flex flex-col px-3 pt-30 lg:justify-center lg:items-center"
       >
-        <div className="space-y-5 bg-transparent backdrop-blur-sm py-2 px-3 rounded-2xl">
+        {/* <div className="space-y-5 z-0 bg-transparent backdrop-blur-sm py-2 px-3 rounded-2xl"> */}
           <h1 className="text-white font-bold text-4xl lg:text-6xl text-center">
             <Typewriter
               options={{
@@ -56,6 +74,6 @@ export default function HomeSection() {
           </h3>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }

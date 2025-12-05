@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="z-20 w-full left-0 top-0 fixed">
+      <div className="z-50 w-full left-0 top-0 fixed">
         <div className="w-full h-[70px] flex items-center">
           <div className="w-full bg-black/10 backdrop-blur-sm max-w-[99%] md:max-w-[80%] mx-auto flex items-center justify-between py-4 px-5 rounded-2xl">
             

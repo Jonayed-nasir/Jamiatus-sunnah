@@ -3,8 +3,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../components/LanguageSwitcher";
+
 
 export default function Introduction() {
+
+    const { t } = useTranslation();
+
   return (
     <div className="lg:mt-16 py-10 px-3 w-full max-w-[95%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center">
       <motion.div
@@ -20,7 +26,7 @@ export default function Introduction() {
           transition={{ duration: 0.6 }}
           className="text-center text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 drop-shadow-lg"
         >
-          সংক্ষিপ্ত পরিচিতি
+          {t('about_section.title')}
         </motion.h3>
 
         <motion.p
@@ -51,7 +57,10 @@ export default function Introduction() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-8 block max-w-[180px] text-center mx-auto px-4 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-indigo-600 hover:to-blue-500 text-white font-bold text-lg shadow-md border-b-4 border-blue-800 hover:border-indigo-500 transition-all duration-300"
         >
-          <Link href="/about/about">Show More</Link>
+          <Link href="/about/about">
+                                  {t('show_more')}
+
+          </Link>
         </motion.span>
       </motion.div>
     </div>
