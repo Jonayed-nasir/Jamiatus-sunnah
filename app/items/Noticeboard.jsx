@@ -136,7 +136,7 @@ export default function Noticeboard() {
                     {item.title}
                   </h3>
                   <p className="text-gray-700 line-clamp-5 mb-4">{item.content}</p>
-                  <Link href={`/notice/${item.id}`} className="justify-center flex">
+                  <Link href="/notfoundpage" className="justify-center flex">
                     <span className="inline-block px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg border-b-4 border-blue-700 transition-all duration-300 mt-5 mb-5">
                       {t('show_more')}
                     </span>

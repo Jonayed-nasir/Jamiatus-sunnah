@@ -16,6 +16,7 @@ export default function MaintenanceNotice() {
   const dots = ".".repeat(dotCount);
 
   return (
+     <div>
     <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-700 via-indigo-600 to-blue-500 overflow-hidden">
       {/* Floating background shapes */}
       <span className="absolute w-72 h-72 bg-white/10 rounded-full top-10 left-20 animate-floatSlow"></span>
@@ -34,6 +35,7 @@ export default function MaintenanceNotice() {
           ইনশাআল্লাহ, নির্দিষ্ট সময়ের মধ্যে সব ফিচার দেখতে পারবেন
         </p>
 
+
         <div className="flex justify-center gap-3 mt-6">
           {[0, 1, 2].map((i) => (
             <span
@@ -43,6 +45,9 @@ export default function MaintenanceNotice() {
             ></span>
           ))}
         </div>
+        <button  className="bg-amber-700 py-2 px-3 rounded-sm text-white mt-5">
+        <Link href="/game">Neon Catch Game</Link>
+      </button>
       </div>
 
       <style jsx>{`
@@ -89,9 +94,9 @@ export default function MaintenanceNotice() {
         .animate-floatSlow2 { animation: floatSlow2 8s ease-in-out infinite; }
       `}</style>
 
-      <button>
-        <Link href="/game">Game</Link>
-      </button>
+      
+    </div>
+    
     </div>
   );
 }

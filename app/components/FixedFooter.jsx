@@ -63,11 +63,11 @@ export default function FixedFooter() {
         <Link href="/admission">
           <NavItem icon={<FileEdit size={22} />} label={t("admission")} href="/admission" />
         </Link>
-        <NavItem icon={<Bell size={22} />} label={t("notice")} href="/notice" />
-        <NavItem icon={<Users size={22} />} label={t("student")} href="/student" />
-        <NavItem icon={<BookUser size={22} />} label={t("teacher")} href="/teacher" />
-        <NavItem icon={<CalendarDays size={22} />} label={t("events")} href="/events" />
-        <NavItem icon={<Clock size={22} />} label={t("prayer_time")} href="/prayer-times" />
+        <NavItem icon={<Bell size={22} />} label={t("notice")} href="/notfoundpage" />
+        <NavItem icon={<Users size={22} />} label={t("student")} href="/notfoundpage" />
+        <NavItem icon={<BookUser size={22} />} label={t("teacher")} href="/notfoundpage" />
+        <NavItem icon={<CalendarDays size={22} />} label={t("events")} href="/notfoundpage" />
+        <NavItem icon={<Clock size={22} />} label={t("prayer_time")} href="/notfoundpage" />
         <NavItem icon={<MessageCircle size={22} />} label={t("message")} href="/message" />
         <NavItem icon={<BookOpen size={22} />} label={t("fatwa")} href="/fatwa" />
       </motion.div>
