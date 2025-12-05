@@ -7,6 +7,8 @@ import Introduction from './items/Introduction';
 import Stats from './items/Stats';
 import AdvancedDepartments from './items/AdvancedDepartments';
 import Projects from './items/Projects';  
+import BefaqResultList from './items/BefaqResultList';
+
 export default function Home() {
   const { t } = useTranslation();
 
@@ -19,6 +21,7 @@ export default function Home() {
       <Stats />
       <AdvancedDepartments />
       <Projects />
+      <BefaqResultList />
       
     </div>
   );
