@@ -46,7 +46,7 @@ export default function MaintenanceNotice() {
           ))}
         </div>
         <button  className="bg-amber-700 py-2 px-3 rounded-sm text-white mt-5">
-        <Link href="/game">Neon Catch Game</Link>
+        <Link href="/game/neon">Neon Catch Game</Link>
       </button>
       </div>
 

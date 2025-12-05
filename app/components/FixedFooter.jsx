@@ -10,8 +10,12 @@ import {
   CalendarDays,
   Clock,
   MessageCircle,
-  BookOpen
+  BookOpen,
+
+
 } from "lucide-react";
+import { FaNewspaper } from "react-icons/fa";
+
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -70,6 +74,7 @@ export default function FixedFooter() {
         <NavItem icon={<Clock size={22} />} label={t("prayer_time")} href="/notfoundpage" />
         <NavItem icon={<MessageCircle size={22} />} label={t("message")} href="/message" />
         <NavItem icon={<BookOpen size={22} />} label={t("fatwa")} href="/fatwa" />
+        <NavItem icon={<FaNewspaper size={22} />} label={t("magazine")}  href="/notfoundpage"/>
       </motion.div>
     </motion.div>
   );
