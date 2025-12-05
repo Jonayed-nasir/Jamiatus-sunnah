@@ -1,22 +1,34 @@
-import Link from 'next/link';
-import React from 'react';
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import React from "react";
 
 export default function Introduction() {
   return (
-    <div className="lg:mt-16 py-10  px-3 w-full max-w-[95%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center ">
-      <div
-        data-aos="fade-down"
-        data-aos-easing="linear"
-        data-aos-duration="1000"
-        className="relative overflow-hidden p-6 rounded-2xl 
-                  bg-white/60 backdrop-blur-md border border-gray-100 shadow-md
-                  transform transition-all duration-1200 ease-out"
+    <div className="lg:mt-16 py-10 px-3 w-full max-w-[95%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center">
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative overflow-hidden p-8 rounded-3xl bg-gradient-to-br from-white/60 via-blue-50/60 to-white/40 backdrop-blur-lg border border-gray-100 shadow-xl transform transition-all hover:scale-105 duration-700"
       >
-        <h3 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white rounded-tl-4xl rounded-br-4xl rounded-sm bg-blue-500 py-3 border-b-5 border-white-800 mb-6">
+        <motion.h3
+          initial={{ scale: 0.9, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 drop-shadow-lg"
+        >
           সংক্ষিপ্ত পরিচিতি
-        </h3>
+        </motion.h3>
 
-        <p className="text-gray-600 text-lg md:text-2xl line-clamp-8 text-center">
+        <motion.p
+          initial={{ scale: 0.95, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-gray-700 text-lg md:text-xl leading-relaxed text-justify line-clamp-8"
+        >
           একমাত্র ইসলাম। জাগতিক চাহিদা, লোভ-লালসা এবং নশ্বর জগতের ক্ষণস্থায়ী
           সাজসজ্জা ও সৌন্দর্যের অবান্তর মোহে এক শ্রেণীর মানুষ সর্বযুগেই তাদের
           কূটকৌশল ও ষড়যন্ত্রের জাল বিস্তার করে কল্যাণ ও মুক্তির আদর্শবাহী
@@ -31,13 +43,17 @@ export default function Introduction() {
           মুহতামিম হযরত মাওলানা হুসাইন আহমাদ (রহ.) এর দিক-নির্দেশনায় মো: বাদশা
           মিয়া সাহেবের দানকৃত বিস্তৃত ভূমির উপরে বিশাল অবয়বে প্রতিষ্ঠা লাভ করে
           “জামিয়াতুস সুন্নাহ “|
-        </p>
-        <span className="mt-8 block max-w-[150px] text-center mx-auto  px-3 rounded-tl-4xl border-b-5 border-blue-800 hover:border-blue-400 rounded-br-3xl rounded-sm  py-2 bg-blue-500 hover:bg-blue-700 transition-all duration-300">
-          <Link className="text-white  font-bold" href="/about/about">
-            Show More
-          </Link>
-        </span>
-      </div>
+        </motion.p>
+
+        <motion.span
+          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8 block max-w-[180px] text-center mx-auto px-4 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-indigo-600 hover:to-blue-500 text-white font-bold text-lg shadow-md border-b-4 border-blue-800 hover:border-indigo-500 transition-all duration-300"
+        >
+          <Link href="/about/about">Show More</Link>
+        </motion.span>
+      </motion.div>
     </div>
   );
 }

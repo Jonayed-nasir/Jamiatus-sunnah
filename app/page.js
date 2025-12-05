@@ -8,7 +8,10 @@ import Stats from './items/Stats';
 import AdvancedDepartments from './items/AdvancedDepartments';
 import Projects from './items/Projects';  
 import BefaqResultList from './items/BefaqResultList';
-
+import NewAdmission from './items/NewAdmission';
+import TeacherLearning from './items/TeacherLearning';
+import RamzanCourses from './items/RamajanCourses';
+import ResidentialFee from './items/ResidenceFee';
 export default function Home() {
   const { t } = useTranslation();
 
@@ -22,7 +25,10 @@ export default function Home() {
       <AdvancedDepartments />
       <Projects />
       <BefaqResultList />
-      
+      <NewAdmission />
+      <TeacherLearning />
+      <RamzanCourses />
+      <ResidentialFee />
     </div>
   );
 }

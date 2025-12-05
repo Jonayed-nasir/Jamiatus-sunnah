@@ -1,0 +1,115 @@
+"use client";
+
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { FaChalkboardTeacher, FaBook, FaClock, FaMoneyBillWave, FaLaptop } from "react-icons/fa";
+
+export default function MuallimTraining() {
+  const trainingDetails = [
+    {
+      icon: <FaChalkboardTeacher />,
+      title: "প্রশিক্ষণের উদ্দেশ্য",
+      description:
+        "শিশুদের প্রাথমিক শিক্ষাকে সহজ ও কার্যকর করতে দক্ষ শিক্ষক তৈরি করা।",
+    },
+    {
+      icon: <FaBook />,
+      title: "কোর্স বিষয়বস্তু",
+      description:
+        "কুরআন তিলাওয়াত, নূরানী পদ্ধতি, মূল শিক্ষাদান কৌশল ও প্র্যাকটিক্যাল টিপস।",
+    },
+    {
+      icon: <FaClock />,
+      title: "সময়কাল",
+      description: "বিভিন্ন মেয়াদে প্রশিক্ষণ অনুষ্ঠিত হয়, সাধারণত ২-৩ মাস।",
+    },
+    {
+      icon: <FaMoneyBillWave />,
+      title: "ফি স্ট্রাকচার",
+      description:
+        "নতুন ছাত্রছাত্রীদের ভর্তি ফি, মাসিক ফি, এবং অন্যান্য আনুষঙ্গিক খরচের বিস্তারিত তথ্য।",
+    },
+    {
+      icon: <FaLaptop />,
+      title: "অনলাইন রেজিস্ট্রেশন",
+      description:
+        "ছাত্রছাত্রীরা সহজে অনলাইনে ফর্ম পূরণ ও প্রয়োজনীয় তথ্য আপলোড করতে পারবেন।",
+    },
+  ];
+
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: i * 0.2 },
+    }),
+  };
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-blue-50 to-blue-200">
+      <div className="max-w-6xl mx-auto px-4">
+        <motion.h2
+          className="text-5xl font-extrabold text-center mb-16 text-blue-700"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          মুয়াল্লিম প্রশিক্ষণ & ভর্তি তথ্য
+        </motion.h2>
+
+        <div ref={ref} className="flex flex-col gap-10">
+          {trainingDetails.map((item, idx) => (
+            <motion.div
+              key={idx}
+              custom={idx}
+              variants={cardVariants}
+              initial="hidden"
+              animate={controls}
+              className="bg-white rounded-3xl shadow-xl p-10 flex flex-col md:flex-row items-center gap-6 text-center md:text-left hover:scale-105 hover:shadow-2xl transition-all duration-500"
+            >
+              <motion.div
+                className="text-7xl text-blue-500"
+                animate={{ scale: [1, 1.2, 1], rotate: [0, 15, 0] }}
+                transition={{ repeat: Infinity, duration: 2, delay: idx * 0.2 }}
+              >
+                {item.icon}
+              </motion.div>
+
+              <div className="flex-1">
+                <motion.h3
+                  className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-600 to-blue-500"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.2 }}
+                >
+                  {item.title}
+                </motion.h3>
+
+                <motion.p
+                  className="text-gray-700 text-lg"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: idx * 0.4 }}
+                >
+                  {item.description}
+                </motion.p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
