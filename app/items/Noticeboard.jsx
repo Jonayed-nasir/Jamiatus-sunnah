@@ -65,15 +65,15 @@ export default function Noticeboard() {
   const visibleCards = getVisibleCards();
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-200">
+    <section className="py-9">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
         {/* Title */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
+        <div className="flex items-center justify-center gap-6 mb-12">
           <Image
             src="/images/new-update.jpeg"
             alt="new-update"
-            width={120}
-            height={120}
+            width={100}
+            height={100}
             className="rounded-xl shadow-2xl hover:scale-110 transition-transform duration-500"
           />
           <motion.h2
