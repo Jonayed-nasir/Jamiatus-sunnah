@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 import HomeSection from './items/HomeSection';
 import Noticeboard from './items/Noticeboard';
 import Introduction from './items/Introduction';
-
-
+import Stats from './items/Stats';
+import AdvancedDepartments from './items/AdvancedDepartments';
+import Projects from './items/Projects';  
 export default function Home() {
   const { t } = useTranslation();
 
@@ -15,6 +16,9 @@ export default function Home() {
       <HomeSection />
       <Noticeboard />                             
       <Introduction />
+      <Stats />
+      <AdvancedDepartments />
+      <Projects />
       
     </div>
   );

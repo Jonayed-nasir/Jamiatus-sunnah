@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FixedFooter from './components/FixedFooter';
 
+
 const aref_ruqaa = Aref_Ruqaa({subsets: ['latin'], weight: ['400', '700'],})
 
 export const metadata = {
@@ -19,7 +20,6 @@ export default function RootLayout({ children }) {
       <body className={`${aref_ruqaa.className}`} >
       <Navbar />
       <AOSInitializer >{children}</AOSInitializer>
-      
 
       <Footer />
       <FixedFooter />

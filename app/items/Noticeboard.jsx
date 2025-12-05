@@ -71,8 +71,8 @@ export default function Noticeboard() {
   const handleNext = () => setIndex((prev) => (prev + 1) % notices.length);
 
   return (
-    <div className="w-full max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center py-10 md:py-20">
-      <div className="flex items-center justify-between lg:justify-center">
+    <div className="w-full max-w-[90%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center py-10 md:py-20 " >
+      <div className="flex items-center justify-between lg:justify-center  ">
         <Image
           data-aos="fade-right"
           className="max-w-32"
@@ -90,7 +90,7 @@ export default function Noticeboard() {
       </div>
 
       {/* 🔹 Navigation Buttons */}
-      <div className="flex justify-between w-full mb-4">
+      <div className="flex justify-between w-full mb-4 ">
         <button
           onClick={handlePrev}
           className="bg-pink-500 hover:bg-pink-700 text-white px-4 py-2 rounded border-b-4 border-pink-700 hover:border-pink-400 transition-all cursor-pointer"
@@ -106,7 +106,7 @@ export default function Noticeboard() {
       </div>
 
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10  "
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -127,12 +127,14 @@ export default function Noticeboard() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="card col-span-1 w-full h-auto bg-white/10 backdrop-blur-md text-white rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500"
+                className="relative overflow-hidden p-6 rounded-2xl 
+                  bg-white/60 backdrop-blur-md border border-gray-100 shadow-md
+                  transform transition-all duration-1200 ease-out "
               >
                 <div
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                  className="card-text p-5"
+                  className="card-text p-5 "
                 >
                   <h2 className=" space-y-7 text-xl font-semibold text-white mb-2 bg-pink-500 py-1.5 px-3 rounded-tl-2xl rounded-br-2xl leading-10 line-clamp-1 border-b-4 border-pink-700 text-center">
                     {item.title}

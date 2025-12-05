@@ -3,14 +3,16 @@ import React from 'react';
 
 export default function Introduction() {
   return (
-    <div className="lg:mt-16 py-10  px-3 w-full max-w-[95%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center">
+    <div className="lg:mt-16 py-10  px-3 w-full max-w-[95%] lg:max-w-[80%] mx-auto flex flex-col justify-center items-center ">
       <div
         data-aos="fade-down"
         data-aos-easing="linear"
         data-aos-duration="1000"
-        className="space-y-7 md:space-y-12 lg:space-y-20 bg-[#EFE9E3] py-5 md:py-10 px-3 md:px-5 rounded-md rounded-tr-4xl rounded-bl-4xl border-b-8 border-[#D9CFC7] "
+        className="relative overflow-hidden p-6 rounded-2xl 
+                  bg-white/60 backdrop-blur-md border border-gray-100 shadow-md
+                  transform transition-all duration-1200 ease-out"
       >
-        <h3 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white rounded-tl-4xl rounded-br-4xl rounded-sm bg-pink-500 py-3 border-b-8 border-pink-600 ">
+        <h3 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white rounded-tl-4xl rounded-br-4xl rounded-sm bg-blue-500 py-3 border-b-5 border-white-800 mb-6">
           সংক্ষিপ্ত পরিচিতি
         </h3>
 
