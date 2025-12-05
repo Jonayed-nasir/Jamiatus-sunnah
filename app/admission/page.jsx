@@ -23,7 +23,7 @@ export default function AdmissionForm() {
     });
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/admission/apply/", {
+      const res = await fetch("https://jamiatussunnah.onrender.com/admission/apply/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
