@@ -61,7 +61,7 @@ export default function FixedFooter() {
       >
         <NavItem icon={<Home size={22} />} label={t("home")} href="/" />
         <Link href="/admission">
-          <NavItem icon={<FileEdit size={22} />} label={t("admission")} href="/register" />
+          <NavItem icon={<FileEdit size={22} />} label={t("admission")} href="/admission" />
         </Link>
         <NavItem icon={<Bell size={22} />} label={t("notice")} href="/notice" />
         <NavItem icon={<Users size={22} />} label={t("student")} href="/student" />
