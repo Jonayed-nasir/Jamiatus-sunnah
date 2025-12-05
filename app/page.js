@@ -12,6 +12,7 @@ import NewAdmission from './items/NewAdmission';
 import TeacherLearning from './items/TeacherLearning';
 import RamzanCourses from './items/RamajanCourses';
 import ResidentialFee from './items/ResidenceFee';
+import PrayerTime from './items/PrayerTime';
 export default function Home() {
   const { t } = useTranslation();
 
@@ -29,6 +30,8 @@ export default function Home() {
       <TeacherLearning />
       <RamzanCourses />
       <ResidentialFee />
+      {/* <PrayerTime /> */}
+      
     </div>
   );
 }

@@ -76,12 +76,12 @@ export default function FixedFooter() {
 
 function NavItem({ icon, label, href }) {
   return (
-    <a
+    <Link
       href={href}
       className="flex flex-col items-center text-[11px] gap-1 px-2 hover:text-gray-300 transition-all"
     >
       {icon}
       <span className="text-[10px]">{label}</span>
-    </a>
+    </Link>
   );
 }
