@@ -5,19 +5,17 @@ import { useEffect, useState } from "react";
 export default function FatwaPage() {
   const [fatwas, setFatwas] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategoryId, setSelectedCategoryId] = useState(null); // id হিসেবে store
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [expanded, setExpanded] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        // fetch fatwas
         const resFatwas = await fetch("https://jamiatussunnah.onrender.com/fatwa/fatwas/");
         const fatwaData = await resFatwas.json();
         setFatwas(fatwaData);
 
-        // fetch categories
         const resCats = await fetch("https://jamiatussunnah.onrender.com/fatwa/categories/");
         const catData = await resCats.json();
         setCategories([{ id: null, name: "All" }, ...catData]);
@@ -38,17 +36,19 @@ export default function FatwaPage() {
   if (loading) return <p className="text-center py-10">Loading...</p>;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">Fatwa‑সমূহ</h1>
+    <div className="max-w-5xl mx-auto px-4 py-6 mt-20">
+      <h1 className="text-3xl font-bold mb-6 text-center animate-pulse text-blue-600">
+        Fatwa‑সমূহ
+      </h1>
 
-      {/* Dynamic Category Flex List */}
+      {/* Category Flex List */}
       <div className="flex gap-3 overflow-x-auto mb-6 py-2 px-1">
         {categories.map((cat) => (
           <button
             key={cat.id ?? "all"}
-            className={`flex-shrink-0 px-4 py-2 rounded-full font-semibold transition-all duration-200 ${
+            className={`flex-shrink-0 px-4 py-2 rounded-full font-semibold text-sm transition-all duration-200 ${
               selectedCategoryId === cat.id
-                ? "bg-blue-500 text-white"
+                ? "bg-blue-500 text-white shadow-md scale-105"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
             onClick={() => setSelectedCategoryId(cat.id)}
@@ -76,21 +76,21 @@ export default function FatwaPage() {
                 onClick={() => setExpanded(isOpen ? null : f.id)}
               >
                 <div>
-{f.name } , { f.address}
-               <div className="flex gap-1 items-center font-bold">
-                 <h5 className="">বিষয় :</h5>
-                  <span className="text-sm text-gray-500">
-                    {categories.find((c) => c.id === f.category)?.name || "Uncategorized"} 
-                  </span>
-               </div>
-                
-
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-semibold">{f.name}</span>
+                    <span className="text-sm text-gray-500">{f.address}</span>
+                  </div>
+                  <div className="flex gap-1 items-center font-bold mb-1">
+                    <h5 className="">বিষয় :</h5>
+                    <span className="text-sm text-gray-500">
+                      {categories.find((c) => c.id === f.category)?.name || "Uncategorized"}
+                    </span>
+                  </div>
                   <h2 className="text-lg font-semibold">প্রশ্ন : {f.question}</h2>
-
                 </div>
                 <span
                   className={`transform transition-transform duration-300 ${
-                    isOpen ? "rotate-45" : "rotate-0"
+                    isOpen ? "rotate-45 text-red-500" : "rotate-0 text-gray-400"
                   }`}
                 >
                   +
@@ -98,8 +98,8 @@ export default function FatwaPage() {
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-4 pt-2 text-gray-700 space-y-2">
-                  <p className=""> <span className="font-bold">উত্তর :</span> {f.answer}</p>
+                <div className="px-5 pb-4 pt-2 text-gray-700 space-y-2 text-sm">
+                  <p><span className="font-bold">উত্তর :</span> {f.answer}</p>
                   {f.reference && (
                     <p className="text-sm text-gray-400 italic">
                       Reference: {f.reference}
