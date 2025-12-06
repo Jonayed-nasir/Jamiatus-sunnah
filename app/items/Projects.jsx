@@ -11,7 +11,7 @@ export default function JamiaProjects() {
       departments: [
         "মক্তব বিভাগ",
         "হিফয বিভাগ",
-        "কিতাবু বিভাগ",
+        "কিতাব বিভাগ",
         "ইফতা বিভাগ",
         "উলূমুল হাদিস বিভাগ",
         "আরবি সাহিত্য বিভাগ",
@@ -50,15 +50,17 @@ export default function JamiaProjects() {
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const badgeVariants = {
     hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 300 },
+    },
   };
 
   return (
@@ -66,10 +68,17 @@ export default function JamiaProjects() {
       <div className="max-w-5xl mx-auto px-4 space-y-12">
         {projects.map((proj, idx) => {
           const controls = useAnimation();
-          const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+          const [ref, inView] = useInView({
+            threshold: 0.3,
+            triggerOnce: false, // repeat animation enabled
+          });
 
           useEffect(() => {
-            if (inView) controls.start("visible");
+            if (inView) {
+              controls.start("visible");
+            } else {
+              controls.start("hidden"); // reset when out of view
+            }
           }, [controls, inView]);
 
           return (
@@ -79,7 +88,11 @@ export default function JamiaProjects() {
               className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow"
               variants={{
                 hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.7, ease: "easeOut" },
+                },
               }}
               initial="hidden"
               animate={controls}
@@ -91,7 +104,11 @@ export default function JamiaProjects() {
                   visible: {
                     opacity: 1,
                     scale: 1,
-                    transition: { type: "spring", stiffness: 120, duration: 0.6 },
+                    transition: {
+                      type: "spring",
+                      stiffness: 120,
+                      duration: 0.6,
+                    },
                   },
                 }}
               >
@@ -102,14 +119,17 @@ export default function JamiaProjects() {
                 className="flex flex-wrap gap-3 justify-center"
                 variants={containerVariants}
                 initial="hidden"
-                animate="visible"
+                animate={controls}
               >
                 {proj.departments.map((dept, didx) => (
                   <motion.span
                     key={didx}
-                    className={`px-4 py-1 rounded-full text-sm font-medium cursor-pointer ${proj.color} shadow-sm`}
+                    className={`px-4 py-1 rounded-full text-sm font-medium cursor-pointer ${proj.color}`}
                     variants={badgeVariants}
-                    whileHover={{ scale: 1.1, boxShadow: "0 4px 12px rgba(0,0,0,0.2)" }}
+                    whileHover={{
+                      scale: 1.1,
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                    }}
                   >
                     {dept}
                   </motion.span>

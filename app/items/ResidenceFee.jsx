@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { FaMoneyBillWave, FaBed, FaCoins } from "react-icons/fa";
 
 export default function ResidentialFee() {
@@ -27,22 +26,32 @@ export default function ResidentialFee() {
     },
   ];
 
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-  const controls = useAnimation();
+  const refs = useRef({});
+  const [visible, setVisible] = useState({});
 
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const idx = entry.target.getAttribute("data-idx");
+          if (entry.isIntersecting) {
+            setVisible((v) => ({ ...v, [idx]: true }));
+          } else {
+            setVisible((v) => ({ ...v, [idx]: false }));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    Object.values(refs.current).forEach((el) => el && observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: i * 0.2 },
-    }),
+    hidden: { opacity: 0, scale: 1.2 }, // scroll out হলে বড় ও fade
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }, // scroll in হলে normal size
   };
 
   return (
@@ -50,28 +59,29 @@ export default function ResidentialFee() {
       <div className="max-w-6xl mx-auto px-4">
         <motion.h2
           className="text-5xl font-extrabold text-center mb-16 text-green-700"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, scale: 1.2 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
           আবাসিক ফি
         </motion.h2>
 
-        <div ref={ref} className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10">
           {feeDetails.map((item, idx) => (
             <motion.div
               key={idx}
-              custom={idx}
-              variants={cardVariants}
+              ref={(el) => (refs.current[idx] = el)}
+              data-idx={idx}
               initial="hidden"
-              animate={controls}
-              className="bg-white rounded-3xl shadow-xl p-10 flex flex-col md:flex-row items-center gap-6 text-center md:text-left hover:scale-105 hover:shadow-2xl transition-all duration-500"
+              animate={visible[idx] ? "visible" : "hidden"}
+              variants={cardVariants}
+              className="bg-white rounded-3xl shadow-xl p-10 flex flex-col md:flex-row items-center gap-6 text-center md:text-left
+                         hover:scale-105 hover:shadow-2xl transition-all duration-500"
             >
               <motion.div
                 className="text-7xl text-green-500"
-                animate={{ scale: [1, 1.2, 1], rotate: [0, 15, 0] }}
-                transition={{ repeat: Infinity, duration: 2, delay: idx * 0.2 }}
+                animate={visible[idx] ? { scale: 1, rotate: [0, 15, 0] } : { scale: 1.2, rotate: 0 }}
+                transition={{ repeat: visible[idx] ? Infinity : 0, duration: 2, delay: idx * 0.2 }}
               >
                 {item.icon}
               </motion.div>
@@ -79,8 +89,8 @@ export default function ResidentialFee() {
               <div className="flex-1">
                 <motion.h3
                   className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-600 to-green-500"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, scale: 1.2 }}
+                  animate={visible[idx] ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.2 }}
                   transition={{ duration: 0.6, delay: idx * 0.2 }}
                 >
                   {item.title}
@@ -89,7 +99,7 @@ export default function ResidentialFee() {
                 <motion.p
                   className="text-gray-700 text-lg"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  animate={visible[idx] ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, delay: idx * 0.4 }}
                 >
                   {item.description}
