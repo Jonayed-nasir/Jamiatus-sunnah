@@ -9,6 +9,7 @@ export default function HomeSection() {
     "/images/hero2.jpeg",
     "/images/hero3.jpeg",
     "/images/hero4.jpeg",
+    "/images/hero5.jpeg"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
