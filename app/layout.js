@@ -14,7 +14,7 @@ export const metadata = {
   title: 'jamiatussunnah',
   description: 'Next.js multilingual setup',
   icons: {
-    icon: "faveicon.png"
+    icon: "/faveicon.png"
   }
 };
 
