@@ -5,6 +5,7 @@ import AOSInitializer from './components/AOSInitializer';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FixedFooter from './components/FixedFooter';
+import { icons } from 'lucide-react';
 
 
 const aref_ruqaa = Aref_Ruqaa({subsets: ['latin'], weight: ['400', '700'],})
@@ -12,6 +13,9 @@ const aref_ruqaa = Aref_Ruqaa({subsets: ['latin'], weight: ['400', '700'],})
 export const metadata = {
   title: 'jamiatussunnah',
   description: 'Next.js multilingual setup',
+  icons: {
+    icon: "faveicon.png"
+  }
 };
 
 export default function RootLayout({ children }) {
